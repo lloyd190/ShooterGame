@@ -12,7 +12,7 @@ class NEWSHOOTERGAME_API APlayerControlledCameraDrones : public ACharacter
 
 public:
 	// Sets default values for this character's properties
-	APlayerControlledCameraDrones();
+	APlayerControlledCameraDrones(const FObjectInitializer& ObjectInitializer);
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -23,6 +23,8 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
-	
-	
+private:
+	UPROPERTY(EditAnywhere)
+	UCameraComponent* Camera;
+
 };
