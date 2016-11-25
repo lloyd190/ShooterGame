@@ -10,8 +10,10 @@ AGun::AGun(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitialize
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	//Root = ObjectInitializer.CreateDefaultSubobject<USceneComponent>(this, TEXT("Root"));
+	Root = ObjectInitializer.CreateDefaultSubobject<USceneComponent>(this, TEXT("Root"));
 	Mesh = ObjectInitializer.CreateDefaultSubobject<UStaticMeshComponent>(this,TEXT("Mesh"));
+
+	Mesh->AttachTo(Root);
 
 }
 
