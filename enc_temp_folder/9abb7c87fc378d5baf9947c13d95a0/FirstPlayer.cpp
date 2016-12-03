@@ -3,7 +3,7 @@
 #include "NewShooterGame.h"
 #include "FirstPlayer.h"
 
-/*ACHTUNG FOR TESTING PURPOSES HAS TO BE REMOVED LATER AND SET IN THE DRONE CLASS*/
+
 bool AFirstPlayer::getShowCameras()
 {
 	return CameraOffline;
@@ -190,7 +190,7 @@ void AFirstPlayer::CameraSwitch()
 		}
 	}
 }
-/*ACHTUNG FOR TESTING PURPOSES HAS TO BE REMOVED LATER AND SET IN THE DRONE CLASS*/
+
 void AFirstPlayer::ShowCameras()
 {
 	if (CameraOffline) {

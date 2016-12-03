@@ -10,7 +10,9 @@ APlayerControlledCameraDrones::APlayerControlledCameraDrones(const FObjectInitia
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	Camera = ObjectInitializer.CreateDefaultSubobject<UCameraComponent>(this, TEXT("Camera"));
+	CameraRecord = ObjectInitializer.CreateDefaultSubobject<USceneCaptureComponent2D>(this, TEXT("CameraRecord"));
 
+	CameraRecord->AttachTo(GetRootComponent());
 	Camera->AttachTo(GetRootComponent());
 	Camera->SetWorldLocation(GetActorLocation());
 }

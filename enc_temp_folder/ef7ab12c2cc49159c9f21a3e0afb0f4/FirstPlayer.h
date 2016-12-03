@@ -15,7 +15,6 @@ class NEWSHOOTERGAME_API AFirstPlayer : public ACharacter
 private:
 	bool SinglePersonCamera = false;
 	FVector2D MouseInput;
-	/*ACHTUNG FOR TESTING PURPOSES HAS TO BE REMOVED LATER AND SET IN THE DRONE CLASS*/
 	bool CameraOffline = false;
 	bool IsDead = false;
 	UPROPERTY(EditAnywhere, category = "Health")
@@ -62,7 +61,6 @@ public:
 	void Jump();
 	void CameraMovement();
 	void CameraSwitch();
-	/*ACHTUNG FOR TESTING PURPOSES HAS TO BE REMOVED LATER AND SET IN THE DRONE CLASS*/
 	void ShowCameras();
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, category = "HUD")
 		void HUDUpdateHp();

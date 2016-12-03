@@ -26,7 +26,8 @@ public:
 private:
 	UPROPERTY(EditAnywhere)
 	UCameraComponent* Camera;
-
+	UPROPERTY(EditAnywhere)
+		USceneCaptureComponent2D* CameraRecord;
 
 
 };
