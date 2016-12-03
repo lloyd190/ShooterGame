@@ -27,4 +27,6 @@ private:
 	UPROPERTY(EditAnywhere)
 	UCameraComponent* Camera;
 
+
+
 };
