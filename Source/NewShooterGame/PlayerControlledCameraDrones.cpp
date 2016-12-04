@@ -7,6 +7,9 @@
 // Sets default values
 APlayerControlledCameraDrones::APlayerControlledCameraDrones(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
+
+	this->GetMesh()->SetSimulatePhysics(false);
+	this->GetMesh()->WakeRigidBody();
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	Camera = ObjectInitializer.CreateDefaultSubobject<UCameraComponent>(this, TEXT("Camera"));
@@ -28,7 +31,7 @@ void APlayerControlledCameraDrones::BeginPlay()
 void APlayerControlledCameraDrones::Tick( float DeltaTime )
 {
 	Super::Tick( DeltaTime );
-
+	AddMovementInput(GetActorUpVector(), 5000000000000.0f);
 }
 
 // Called to bind functionality to input
