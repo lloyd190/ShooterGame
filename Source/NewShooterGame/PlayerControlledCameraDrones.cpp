@@ -31,7 +31,7 @@ void APlayerControlledCameraDrones::BeginPlay()
 void APlayerControlledCameraDrones::Tick( float DeltaTime )
 {
 	Super::Tick( DeltaTime );
-	AddMovementInput(GetActorUpVector(), 5000000000000.0f);
+   
 }
 
 // Called to bind functionality to input
