@@ -50,6 +50,8 @@ void AFirstPlayer::UpdateCurrentHealth(float val)
 		CurrentHealth += val;
 		HUDUpdateHp();
 	}
+	GetMesh()->SetSimulatePhysics(IsDead);
+	GetCapsuleComponent()->SetSimulatePhysics(IsDead);
 }
 
 // Sets default values
