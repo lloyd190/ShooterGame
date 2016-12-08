@@ -44,14 +44,17 @@ void AFirstPlayer::UpdateCurrentHealth(float val)
 		IsDead = true;
 		CurrentHealth = 0.0f;
 		HUDUpdateHp();
+		OurCameraSpringArm->bUsePawnControlRotation = true;
 	}
 	else if(CurrentHealth+val > 0.0f) {
 		IsDead = false;
 		CurrentHealth += val;
 		HUDUpdateHp();
+		
 	}
 	GetMesh()->SetSimulatePhysics(IsDead);
 	GetCapsuleComponent()->SetSimulatePhysics(IsDead);
+	
 }
 
 // Sets default values
