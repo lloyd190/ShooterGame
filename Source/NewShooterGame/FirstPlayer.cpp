@@ -4,6 +4,12 @@
 #include "FirstPlayer.h"
 
 
+void AFirstPlayer::SprintStart() {
+	IsSprinting = true;
+}
+void AFirstPlayer::SprintEnd() {
+	IsSprinting = false;
+}
 bool AFirstPlayer::getShowCameras()
 {
 	return CameraOffline;
@@ -98,6 +104,12 @@ void AFirstPlayer::BeginPlay()
 // Called every frame
 void AFirstPlayer::Tick(float DeltaTime)
 {
+	if (IsSprinting) {
+		GetCharacterMovement()->MaxWalkSpeed = 700;
+	}
+	else {
+		GetCharacterMovement()->MaxWalkSpeed = 375;
+	}
 	Super::Tick(DeltaTime);
 	CameraMovement();
 }
@@ -115,6 +127,8 @@ void AFirstPlayer::SetupPlayerInputComponent(class UInputComponent* InputCompone
 		InputComponent->BindAction("Jump", IE_Released, this, &AFirstPlayer::JumpEnd);
 		InputComponent->BindAction("SwitchCamera", IE_Pressed, this, &AFirstPlayer::CameraSwitch);
 		InputComponent->BindAction("TurnOnCameras", IE_Pressed, this, &AFirstPlayer::ShowCameras);
+		InputComponent->BindAction("Shift", IE_Pressed, this, &AFirstPlayer::SprintStart);
+		InputComponent->BindAction("Shift", IE_Released, this, &AFirstPlayer::SprintEnd);
 }
 
 void AFirstPlayer::MoveForward(float val)

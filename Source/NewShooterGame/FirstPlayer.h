@@ -13,6 +13,7 @@ class NEWSHOOTERGAME_API AFirstPlayer : public ACharacter
 	GENERATED_BODY()
 
 private:
+	bool IsSprinting = false;
 	bool SinglePersonCamera = false;
 	FVector2D MouseInput;
 	/*ACHTUNG FOR TESTING PURPOSES HAS TO BE REMOVED LATER AND SET IN THE DRONE CLASS*/
@@ -24,6 +25,8 @@ private:
 		float InitialHealth;	
 
 public:
+	void SprintStart();
+	void SprintEnd();
 	UFUNCTION(BlueprintPure, category = "HUD")
 		bool getShowCameras();
 	
